@@ -17,12 +17,12 @@ typedef char Block[];
 #define SQR(x) ((x) * (x))
 #define SUM(x, y) ((x) + (y))
 #define DIFF(x, y) ((y) - (x))
-#define SWAP(x, y)                                                             \
-  {                                                                            \
-    int tmp = x;                                                               \
-    x = y;                                                                     \
-    y = tmp;                                                                   \
-  }
+#define SWAP(x, y)   \
+    {                \
+        int tmp = x; \
+        x = y;       \
+        y = tmp;     \
+    }
 
 #define SEEK_SET 0
 #define SEEK_CUR 1
@@ -45,7 +45,8 @@ const int CANDIDATES = 100;
 const int BFHEAD_LENGTH = sizeof(int) * 2;
 const int BTREE_LEAF_SIZE = 128;
 
-const std::vector<int> TOPKs = {1, 2, 5, 10, 20, 50, 100};
+// const std::vector<int> TOPKs = {1, 2, 5, 10, 20, 50, 100};
+const std::vector<int> TOPKs = {1};
 const int MAXK = TOPKs.back();
 
-} // end namespace nns
+}  // end namespace nns
