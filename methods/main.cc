@@ -28,7 +28,7 @@ void usage()  // usage of the package
         "    -z    (real)      symmetric factor of p-stable distr. [-1, 1]\n"
         "    -c    (real)      approximation ratio (c > 1)\n"
         "    -lf   (integer)   leaf size of kd-tree\n"
-        "    -L       (integer)   number of projections (drusilla)\n"
+        "    -L    (integer)   number of projections (drusilla)\n"
         "    -M    (integer)   number of candidates  (drusilla)\n"
         "    -dt   (string)    data type\n"
         "    -pf   (string)    prefix folder\n"
