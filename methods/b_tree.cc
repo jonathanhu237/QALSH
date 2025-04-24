@@ -35,16 +35,6 @@ void BTree::init(       // init a new tree
     int b_length,       // block length
     const char *fname)  // file name
 {
-    FILE *fp = fopen(fname, "r");
-    if (fp) {        // check whether the file exist
-        fclose(fp);  // ask whether replace?
-        printf("The file \"%s\" exists. Replace? (y/n)", fname);
-
-        char c = getchar();  // input 'Y' or 'y' or others
-        getchar();           // input `Enter` button
-        assert(c == 'y' || c == 'Y');
-        remove(fname);  // otherwise, remove existing file
-    }
     file_ = new BlockFile(b_length, fname);  // b-tree stores here
 
     // -------------------------------------------------------------------------

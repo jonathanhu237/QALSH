@@ -260,13 +260,8 @@ int QALSH<DType>::write_params()  // write parameters to disk
 {
     char fname[200];
     sprintf(fname, "%spara", path_);
-    FILE *fp = fopen(fname, "rb");
-    if (fp) {
-        printf("Hash Tables Already Exist\n\n");
-        exit(1);
-    }
 
-    fp = fopen(fname, "wb");
+    FILE *fp = fopen(fname, "wb");
     if (!fp) {
         printf("Could not create %s\n", fname);
         printf("Perhaps no such folder %s?\n", path_);
