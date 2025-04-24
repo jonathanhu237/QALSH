@@ -30,3 +30,13 @@
 *.exe
 *.out
 *.app
+
+# Data
+data/
+!data/Mnist/
+!data/convert
+!data/run.sh
+!data/txt2bin.cc
+
+# Results
+results/
