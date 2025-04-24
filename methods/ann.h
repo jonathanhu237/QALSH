@@ -230,6 +230,7 @@ int indexing_of_qalsh(    // indexing of qalsh
     const DType *data,    // data points
     const char *ofolder)  // output folder
 {
+    // open output file to record information of indexing
     char fname[200];
     sprintf(fname, "%sqalsh.out", ofolder);
     FILE *fp = fopen(fname, "a+");
@@ -244,17 +245,20 @@ int indexing_of_qalsh(    // indexing of qalsh
     sprintf(path, "%sqalsh/", ofolder);
     QALSH<DType> *lsh = new QALSH<DType>(n, d, B, p, zeta, c, data, path);
     lsh->display();
-
     gettimeofday(&g_end_time, NULL);
+
+    // calculate indexing time and memory usage
     g_indexing_time =
         g_end_time.tv_sec - g_start_time.tv_sec + (g_end_time.tv_usec - g_start_time.tv_usec) / 1000000.0f;
     g_estimated_mem = lsh->get_memory_usage() / 1048576.0f;
 
+    // print indexing time and memory usage
     printf("Indexing Time = %f Seconds\n", g_indexing_time);
     printf("Estimated Mem = %f MB\n\n", g_estimated_mem);
     fprintf(fp, "Indexing Time = %f Seconds\n", g_indexing_time);
     fprintf(fp, "Estimated Mem = %f MB\n\n", g_estimated_mem);
 
+    // clean up
     fclose(fp);
     delete lsh;
     return 0;
