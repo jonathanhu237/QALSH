@@ -46,7 +46,7 @@ const int BFHEAD_LENGTH = sizeof(int) * 2;
 const int BTREE_LEAF_SIZE = 128;
 
 // const std::vector<int> TOPKs = {1, 2, 5, 10, 20, 50, 100};
-const std::vector<int> TOPKs = {1};
+const std::vector<int> TOPKs = {100};
 const int MAXK = TOPKs.back();
 
 }  // end namespace nns
