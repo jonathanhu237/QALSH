@@ -308,6 +308,7 @@ float calc_l1_dist(   // calc Manhattan distance (l_1)
     const DType *p1,  // 1st point
     const DType *p2)  // 2nd point
 {
+    // d is the largest multiple of 8 that is less than or equal to dim
     unsigned d = dim & ~unsigned(7);
     const DType *aa = p1, *end_a = aa + d;
     const DType *bb = p2, *end_b = bb + d;
