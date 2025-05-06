@@ -71,7 +71,7 @@ class MinK_List {
         int id);    // id of item
 
    protected:
-    int k_;         // max numner of keys
+    int k_;         // max number of keys
     int num_;       // number of key current active
     Result *list_;  // the list itself
 };
